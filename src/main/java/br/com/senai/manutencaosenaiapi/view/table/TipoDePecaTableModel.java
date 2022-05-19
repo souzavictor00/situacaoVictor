@@ -4,26 +4,23 @@ import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
-import br.com.senai.manutencaosenaiapi.entity.Peca;
+import br.com.senai.manutencaosenaiapi.entity.TipoDePeca;
 
-public class PecaTableModel extends AbstractTableModel{
+public class TipoDePecaTableModel extends AbstractTableModel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	private final int QTDE_COLUNAS = 3;
+	private final int QTDE_COLUNAS = 2;
 	
-	private List<Peca> pecas;	
+	private List<TipoDePeca> tipos;	
 	
-	public PecaTableModel(List<Peca> pecas) {	
-		this.pecas = pecas;
+	public TipoDePecaTableModel(List<TipoDePeca> tipos) {	
+		this.tipos = tipos;
 	}
 
 	@Override
 	public int getRowCount() {
-		return pecas.size();
+		return tipos.size();
 	}
 
 	@Override
@@ -37,32 +34,27 @@ public class PecaTableModel extends AbstractTableModel{
 			return "ID";
 		}else if (column == 1) {
 			return "Descrição";
-		}else if (column == 2) {
-			return "QTDE";
 		}
 		throw new IllegalArgumentException("Indice inválido");
 	}
 	
-	public Peca getPor(int rowIndex) {
-		return pecas.get(rowIndex);
+	public TipoDePeca getPor(int rowIndex) {
+		return tipos.get(rowIndex);
 	}
 	
 	public void removerPor(int rowIndex) {
-		pecas.remove(rowIndex);
+		tipos.remove(rowIndex);
 	}
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		
 		if (columnIndex == 0) {
-			return pecas.get(rowIndex).getId();
+			return tipos.get(rowIndex).getId();
 		}else if (columnIndex == 1) {
-			return pecas.get(rowIndex).getDescricao();
-		}else if (columnIndex == 2) {
-			return pecas.get(rowIndex).getQtdeEmEstoque();
+			return tipos.get(rowIndex).getDescricao();
 		}
 		
 		throw new IllegalArgumentException("Indice inválido");
 	}
-
 }

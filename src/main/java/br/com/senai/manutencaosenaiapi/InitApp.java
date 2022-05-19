@@ -2,6 +2,7 @@ package br.com.senai.manutencaosenaiapi;
 
 import java.awt.EventQueue;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,13 +10,15 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import br.com.senai.manutencaosenaiapi.view.TelaConsultaDePeca;
+import br.com.senai.manutencaosenaiapi.view.TelaPesquisaTipoDePeca;
 
 @SpringBootApplication
 public class InitApp {
 	
+	//@Autowired
+	//private TelaConsultaDePeca telaDeConsulta;
 	@Autowired
-	private TelaConsultaDePeca telaDeConsulta;
+	private TelaPesquisaTipoDePeca telaPesquisaTipoDePeca;
 
 	public static void main(String[] args) {
 		SpringApplicationBuilder builder = 
@@ -32,7 +35,8 @@ public class InitApp {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {							
-							telaDeConsulta.setVisible(true);
+							//telaDeConsulta.setVisible(true);
+							telaPesquisaTipoDePeca.setVisible(true);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
