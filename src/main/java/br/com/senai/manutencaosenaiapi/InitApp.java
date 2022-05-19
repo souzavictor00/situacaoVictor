@@ -15,8 +15,7 @@ import br.com.senai.manutencaosenaiapi.view.TelaPesquisaTipoDePeca;
 @SpringBootApplication
 public class InitApp {
 	
-	//@Autowired
-	//private TelaConsultaDePeca telaDeConsulta;
+	
 	@Autowired
 	private TelaPesquisaTipoDePeca telaPesquisaTipoDePeca;
 
