@@ -16,6 +16,8 @@ import br.com.senai.manutencaosenaiapi.view.TelaPesquisaTipoDePeca;
 public class InitApp {
 	
 	
+	
+	
 	@Autowired
 	private TelaPesquisaTipoDePeca telaPesquisaTipoDePeca;
 
